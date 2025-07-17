@@ -1,0 +1,107 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html{
+    font-size: 62,5%;
+    background-color: rgb(203, 197, 197);
+}
+
+.galery{
+    display: flex;
+    width: 100rvw;
+    height: 100dvh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+h1{
+    font-size: 3rem;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+}
+
+.image{
+    display: flex;
+    margin: auto;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: .5rem;
+    background-color: white;
+    max-width: 90%;
+    min-width: 50rem;
+    padding: 1rem;
+    margin: 0 auto;
+    box-shadow: 0 0 .8rem black;
+}
+
+a{
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    flex-basis: calc(25% - .5rem);
+    overflow: hidden;
+    position: relative;
+    flex-grow: 1;
+}
+
+a::after{
+    content: '';
+    background-color: rgba(145, 145, 145, 0.5);
+    position: absolute;
+    z-index: 2;
+    pointer-events: none;
+    inset: 0;
+    transition: background-color .8s ease-in-out;
+}
+
+a img{
+    transition: transform .8s ease-in-out;
+    z-index: 1;
+}
+
+a img + p{
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    z-index: 1;
+    height: 2rem;
+    background-color: black;
+    color: white;
+    text-transform: uppercase;
+    padding: .5rem;
+    justify-content: start;
+    align-items: center;
+    font-size: .8rem;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    letter-spacing: .1rem;
+    opacity: .5;
+    transform: translateY(100%);
+    transition: all .5s ease-in-out;
+}
+
+a:hover{
+    outline: 2px solid black;
+}
+
+a:hover img{
+    transform: scale(1.2);
+}
+
+a:hover img + p{
+    opacity: 1;
+    transform: translate(0);  
+}
+
+a:hover::after{
+    content: '';
+    background-color: transparent;
+}
+
